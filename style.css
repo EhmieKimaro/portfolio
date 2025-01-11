@@ -1,0 +1,518 @@
+ 
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  max-width: 100% !important;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #3f3f3f;
+  font-size: 16px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* This is to prevent horizontal scrolling */
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto; /* This is to center the container if needed */
+}
+
+section, div {
+  overflow: hidden; 
+}
+
+
+h1{
+  font-family: 'Reggae One';
+  font-style: normal;
+  font-size: 48px;
+  text-align: center;
+  color: #FAF7F8;
+  padding-top: 4px;
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+.sidebar {
+  position: fixed;
+  background-color: #1a212b;
+  color: #faf7f8;
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
+  justify-content: space-between;
+  width: 20%;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+.sidebar .profile img {
+  width: 130px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+  padding: 10px 0;
+}
+  
+.sidebar nav ul {
+  list-style: none;
+  margin-top: 20px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin: 20px 0;
+  text-align: center;
+}
+  
+.sidebar nav ul li a {
+  color: #FAF7F8;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  display: block; 
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #ddd;
+  color: #333
+}
+
+.sidebar .close-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.sidebar.active {
+  transform: translateX(0); /* this is to slide the sidebar into view */
+}
+
+
+/*This is for the menu icon to be hidden on desktop view*/
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+  
+.profile{
+  padding-top: 20%;
+}
+
+.main-content {
+width: 100%;
+padding-left: 350px;
+transition: margin-left 0.3s ease;
+line-height: 1.6;
+}
+
+.hero {
+  background-image: url(assets/profile2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: auto auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.hero #rotating-text {
+  color: #3f3f3f;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem; 
+  text-align: center; 
+}
+
+p{
+  font-size: 1.2rem;
+}
+
+.about {
+  padding: 100px;
+  height: 100%;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #3f3f3f;
+  text-align: center;
+}
+
+.journey img{
+  height: 100%;
+  width: 100%;
+  padding-top: 2%;
+}
+
+.about ul{
+ list-style: none;
+ font: bold;
+}
+
+.about ul li:before {
+  content: '✓';
+}
+
+h3{
+  margin-top: 32px;
+  font-size: 20px;
+  text-align: center;
+}
+  
+.about .columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.portfolio {
+  margin-bottom: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 200px;
+  padding-right: 200px;
+  text-align: center;
+  background-color: #CFC4C2;
+  height: 100vh;
+}
+
+.portfolio h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #3f3f3f;
+  text-align: center;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.portfolio-grid img {
+  width: 70%;
+  border-radius: 20px;
+}
+
+.project {
+  position: relative;
+  width: 100%; 
+  height: 100%; 
+  border-radius: 20px; 
+  overflow: hidden; 
+  cursor: pointer; 
+  transition: transform 0.3s ease; 
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 20px;
+  transition: opacity 0.3s ease; /* this what makes the projects to transition on hover */
+}
+
+.project .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* the overlay is hidden by default */
+  transition: opacity 0.3s ease;
+  color: #fff; 
+  font-family: 'Arial', sans-serif; 
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 20px; 
+}
+
+.project:hover img {
+  opacity: 0.3; /* on hover, this dims the image */
+}
+
+.project:hover .overlay {
+  opacity: 1; /* this hows the overlay on hover */
+}
+
+.project:active {
+  transform: scale(0.95); /* this shrinks the proect card when clicked */
+}
+
+
+.contact {
+  padding: 100px;
+  text-align: center;    
+  font-family: 'Aref Ruqaa';
+  font-style: normal;
+  font-size: 24px;
+  line-height: 38px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #3f3f3f;
+}
+
+.contact .email {
+  color: #3f3f3f;
+  margin-top: 10px;
+}
+
+.email{
+  align-items: center;
+  color: #3f3f3f;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+/* Responsiveness for tablets (768px and below) */
+@media (max-width: 768px) {
+  .sidebar {
+    height: 100%;
+    text-align: center;
+    width: 40%;
+    z-index: 100; /* Higher value to make it appear on top */
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebar .close-icon {
+    display: block;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .hero #rotating-text {
+    color: #3f3f3f;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem; /* Adjust font size as needed */
+    text-align: center; /* Ensure text is centered */
+  }
+
+  .main-content {
+    width: 100%;
+    padding-left: 0px;
+    transition: margin-left 0.3s ease;
+    line-height: 1.6;
+    }
+
+  .hero {
+    background-size: 100vh;
+    padding: 0;
+    height: 500px;
+  }
+
+  body{
+    width: fit-content;
+    max-width: 768px;
+  }
+
+  .about{
+      padding: 100px;
+      height: 100%;
+  }
+
+  .about .columns {
+    grid-template-columns: 1fr; /* here, the columns turns to a single column */
+  }
+
+  .portfolio {
+    margin-bottom: 50px;
+    padding: 50px;
+    text-align: center;
+    background-color: #CFC4C2;
+    height: 100%;
+  }
+  
+  .portfolio h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3f3f3f;
+    text-align: center;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .portfolio-grid img {
+    width: 80%;
+    border-radius: 20px;
+  }
+
+  .project {
+    transform: scale(1); 
+    transition: transform 0.3s ease-in-out, 
+    box-shadow 0.3s ease-in-out;
+  }
+
+  .project:hover {
+    transform: scale(1.05); 
+  }
+
+  .project .overlay {
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .project:hover .overlay {
+    opacity: 1;
+  }
+
+
+  .contact .email {
+    font-size: 1.1rem;
+  }
+
+.sidebar:not(.active) + .main-content {
+  margin-left: 0; 
+}
+}
+
+/* Responsiveness for tablets (480px and below) */
+@media (max-width: 480px) {
+  .sidebar {
+    height: 100%; 
+    text-align: center; 
+    width: 40%;
+    z-index: 100; 
+  }
+
+  h1{
+    font-size: 26px;
+    padding-bottom: 8px;
+  }
+
+  .hero #rotating-text {
+    color: #3f3f3f;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; 
+    text-align: center; 
+  }
+
+  .main-content {
+    width: 100%;
+    padding-left: 0px;
+    transition: margin-left 0.3s ease;
+    line-height: 1.6;
+    }
+
+  .hero {
+    background-size: 100vh;
+    padding: 0;
+    height: 300px;
+  }
+
+  body{
+    width: fit-content;
+    max-width: 480px;
+  }
+
+  p{
+    font-size: 1rem;
+  }
+
+  .about{
+      padding: 50px;
+      height: 100%;
+  }
+
+  .about .columns {
+    grid-template-columns: 1fr; 
+  }
+
+  .portfolio {
+    margin-bottom: 50px;
+    padding: 50px;
+    text-align: center;
+    background-color: #CFC4C2;
+    height: 100%;
+  }
+  
+  .portfolio h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3f3f3f;
+    text-align: center;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  
+  .portfolio-grid img {
+    width: 80%;
+    border-radius: 20px;
+  }
+
+  .project {
+    transform: scale(1); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .project:hover {
+    transform: scale(1.05); 
+  }
+
+  .project .overlay {
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .project:hover .overlay {
+    opacity: 1; 
+  }
+
+
+  .contact .email {
+    font-size: 1.1rem;
+  }
+}

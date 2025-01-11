@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="navbar-left">
+        <h1>Word Game</h1>
+      </div>
+      <div class="navbar-right">
+        <h3><a href="index.html">Home</a></h3>
+        <span>/</span>
+        <h4>Portfolio Details</h4>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <div class="slideshow-container">
+      <div>
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 2</div>
+          <img src="assets/hehehe.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 2</div>
+          <img src="assets/rating.png" style="width:100%">
+        </div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+      <br>
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+      </div>
+      </div>
+      
+
+    <div class="portfolio-details">
+        <h2>Portfolio Details</h2>
+        <p>The game was designed by me to stimulate users into finding words witin other words. The game app is designed to provide fun and engaging word challenges for users of all ages. The goal was to create an intuitive, visually appealing app that combines learning with entertainment.</p> 
+
+        <h4>Design Process</h4> 
+        <p>Through user research, I identified the need for a simple yet rewarding word game. Wireframes and prototypes were developed to map key features like drag-and-drop word formation, daily puzzles, and leaderboards. User feedback during testing ensured the design was easy to navigate and engaging.</p>
+
+        <h4>Features</h4> 
+        <p>1. Timed word challenges with varying difficulty.</p> 
+        <p>2. Daily puzzles to keep users motivated.</p>
+        <p>3. Leaderboards for friendly competition.</p> 
+        <p>4. Progress tracking to monitor improvement.</p>
+ 
+        <p>The Word Game App is a fun way to improve vocabulary while staying entertained.
+        </p>
+    </div>
+
+  </main>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html> 

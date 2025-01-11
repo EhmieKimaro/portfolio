@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="navbar-left">
+        <h1>AI Conversational Kiosk</h1>
+      </div>
+      <div class="navbar-right">
+        <h3><a href="index.html">Home</a></h3>
+        <span>/</span>
+        <h4>Portfolio Details</h4>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <div class="slideshow-container">
+      <div>
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 1</div>
+          <img src="assets/aikiosk.png" style="width:100%">
+        </div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+      <br>
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+      </div>
+      </div>
+      
+
+    <div class="portfolio-details">
+        <h2>Portfolio Details</h2>
+        <p>The AI Conversational Kiosk is an innovative solution designed to enhance the self-service experience in supermarkets and malls. By integrating AI-powered conversational capabilities, the kiosk allows for seamless and intuitive interactions during checkout.</p>
+
+        <h4>Design Thinking Process</h4> 
+        <p>The project began with user research to understand pain points in self-service systems. Wireframes and prototypes were created to design a user-friendly interface that supports both voice and text-based interactions. Iterative testing ensured the AI responses were accurate and user-focused.</p>
+
+        <p>
+          This AI-driven kiosk bridges the gap between technology and convenience, making shopping more efficient and inclusive.</p> 
+       
+    </div>
+
+  </main>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html> 

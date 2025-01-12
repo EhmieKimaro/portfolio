@@ -143,6 +143,20 @@ display: block;
   animation-duration: 1.5s;
 }
 
+.portfolio-details {
+    margin-top: 5%;
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .portfolio-details h2 {
+    margin-bottom: 15px;
+  }
+  
+  .portfolio-details p {
+    margin-bottom: 10px;
+  }
+
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
@@ -156,5 +170,7 @@ display: block;
   .portfolio-details{
     max-width: 100%;
   }
+  
+  
 }
 

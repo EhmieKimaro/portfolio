@@ -12,6 +12,8 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     "a Visual Designer",
     "an Application Software Designer", 
     "an Interaction Designer",
+    "a Product Designer",
+    "an AI Enthusiast",
     "a Content Creator",
   ];
 
